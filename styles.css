@@ -1,0 +1,121 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Barlow Semi Condensed", sans-serif;
+}
+
+:root {
+    /* Primary */
+    --Moderateviolet: hsl(263, 55%, 52%);
+    --Verydarkgrayishblue: hsl(217, 19%, 35%);
+    --Verydarkblackishblue: hsl(219, 29%, 14%);
+    --White: hsl(0, 0%, 100%);
+
+    /* Neutral */
+    --Lightgray: hsl(0, 0%, 81%);
+    --Lightgrayishblue: hsl(210, 46%, 95%);
+
+    --gap: 2rem;
+    font-size: 14px;
+}
+
+/* body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+} */
+
+#main {
+    display: grid;
+    grid-template-columns: repeat(4, 3fr);
+    grid-template-rows: repeat(2, 3fr);
+    gap: var(--gap);
+    margin: 3rem;
+    background-color: var(--Lightgrayishblue);
+    padding: 8rem;
+    justify-content: center;
+}
+
+.name {
+    font-weight: 400;
+}
+
+.upper-text {
+    font-weight: 500;
+}
+
+.first {
+    background-color: var(--Moderateviolet);
+    grid-column: span 2;
+}
+
+.second {
+    background-color: var(--Verydarkgrayishblue);
+}
+
+.white {
+    background-color: var(--White);
+}
+
+.fourth {
+    background-color: var(--Verydarkblackishblue);
+    grid-column: -4 / -2;
+}
+
+.fifth {
+    grid-row: -3 / -1;
+    grid-column: 4 / 5;
+}
+
+.article {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    text-align: left;
+}
+
+.color-1{
+    color: var(--White);
+}
+
+.top {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+img {
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+}
+
+.main-text {
+    padding: 1rem 0rem;
+    display: grid;
+    gap: 15px;
+    
+}
+
+.small-weight {
+    font-weight: 200;
+}
+
+@media (max-width: 760px) {
+    #main { 
+        grid-template-columns: 1fr; /* 1 column */ 
+        grid-template-rows: repeat(8, auto); /* Adjust rows for single column */ 
+        padding: 2rem; margin: 1rem; 
+    } 
+    
+    .first, .second, .white, .fourth, .fifth {
+        grid-column: span 1 !important; /* Ensure all items occupy a single column */ 
+    } 
+    .first, .fifth { 
+        grid-row: auto; /* Adjust grid-row if necessary */ 
+    } 
+}
+
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
